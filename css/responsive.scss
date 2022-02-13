@@ -124,6 +124,25 @@
             height: 65px;
         }
     }
+    .opening-cover {
+        .chose-settings-container {
+            width: auto;
+            .chose-difficulty-container {
+                width: auto;
+                .difficulty-bnts-container {
+                    width: auto;
+                    flex-wrap: nowrap;
+                }
+            }
+            .choose-avatar-container {
+                width: auto;
+                .avatar-cards-container {
+                    width: auto;
+                    flex-wrap: nowrap;
+                }
+            }
+        }
+    }
 }
 
 @media only screen and (max-width: 600px) {
@@ -191,6 +210,16 @@
             font-size: 40px;
             width: 200px;
             height: 65px;
+        }
+    }
+    .opening-cover--left {
+        .chose-settings-container {
+            transform: translate(50%, 0);
+        }
+    }
+    .opening-cover--right {
+        .chose-settings-container {
+            transform: translate(-50%, 0);
         }
     }
 }

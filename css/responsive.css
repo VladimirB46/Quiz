@@ -111,6 +111,25 @@
     width: 200px;
     height: 65px;
   }
+  .opening-cover .chose-settings-container {
+    width: auto;
+  }
+  .opening-cover .chose-settings-container .chose-difficulty-container {
+    width: auto;
+  }
+  .opening-cover .chose-settings-container .chose-difficulty-container .difficulty-bnts-container {
+    width: auto;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+  }
+  .opening-cover .chose-settings-container .choose-avatar-container {
+    width: auto;
+  }
+  .opening-cover .chose-settings-container .choose-avatar-container .avatar-cards-container {
+    width: auto;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+  }
 }
 
 @media only screen and (max-width: 600px) {
@@ -177,6 +196,14 @@
     font-size: 40px;
     width: 200px;
     height: 65px;
+  }
+  .opening-cover--left .chose-settings-container {
+    -webkit-transform: translate(50%, 0);
+            transform: translate(50%, 0);
+  }
+  .opening-cover--right .chose-settings-container {
+    -webkit-transform: translate(-50%, 0);
+            transform: translate(-50%, 0);
   }
 }
 
