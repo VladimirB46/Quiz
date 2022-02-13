@@ -1,0 +1,640 @@
+@media only screen and (max-width: 1870px) and (min-width: 950px) {
+    .chaser-container {
+        left: calc(50% + 220px);
+        bottom: 280px;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .question-text-container {
+        &::after,
+        &::before {
+            display: none;
+        }
+    }
+    .answer-buttons-container {
+        .answer-button {
+            &::after,
+            &::before {
+                display: none;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1100px) and (min-width: 950px) {
+    .chaser-container {
+        left: calc(50% + 150px);
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .answer-buttons-container {
+        .answer-button {
+            .answer-button__central {
+                span:nth-of-type(2) {
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+    .avatar-container {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .question-and-answers-container {
+        .question-text {
+            font-size: 22px;
+        }
+    }
+    .new-game-btn {
+        font-size: 24px;
+        height: 55px;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .question-and-answers-container {
+        padding-bottom: 15px;
+        .skip-question-btn,
+        .help-btn {
+            font-size: 22px;
+            height: 45px;
+        }
+    }
+    .question-text-container {
+        margin-bottom: 10px;
+        .question-text {
+            font-size: 22px;
+        }
+    }
+    .answer-buttons-container {
+        row-gap: 5px;
+        .answer-button {
+            .answer-button__central {
+                padding: 0 25px;
+                span:nth-of-type(1) {
+                    font-size: 22px;
+                }
+                span:nth-of-type(2) {
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 750px) {
+    .chose-settings-container {
+        row-gap: 5px;
+        .choose-avatar-warning,
+        .chose-difficulty-warning {
+            font-size: 16px;
+        }
+        .chose-difficulty-container {
+            h2 {
+                font-size: 25px;
+            }
+            .difficulty-btn {
+                font-size: 22px;
+                height: 48px;
+            }
+        }
+        .choose-avatar-container {
+            h2 {
+                font-size: 25px;
+            }
+            .avatar-cards-container {
+                .avatar-card {
+                    width: 150px;
+                    height: 170px;
+                }
+            }
+        }
+        .play-btn {
+            font-size: 40px;
+            width: 200px;
+            height: 65px;
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .answer-buttons-container {
+        .answer-button {
+            flex-basis: 100%;
+            .answer-button__central {
+                padding: 0 30px;
+                span:nth-of-type(1) {
+                    font-size: 24px;
+                }
+                span:nth-of-type(2) {
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+    .new-game-btn {
+        font-size: 22px;
+        height: 50px;
+        top: 15px;
+        left: 15px;
+    }
+}
+
+@media only screen and (max-width: 540px) {
+    .chose-settings-container {
+        .choose-avatar-warning,
+        .chose-difficulty-warning {
+            font-size: 14px;
+        }
+        .chose-difficulty-container {
+            h2 {
+                font-size: 22px;
+            }
+            .difficulty-bnts-container {
+                column-gap: 15px;
+            }
+            .difficulty-btn {
+                font-size: 20px;
+                height: 45px;
+                border: solid 3px #008cff;
+            }
+        }
+        .choose-avatar-container {
+            h2 {
+                font-size: 22px;
+            }
+            .avatar-cards-container {
+                column-gap: 20px;
+                .avatar-card {
+                    width: 120px;
+                    height: 140px;
+                }
+                .avatar-card.selected {
+                    border: 5px solid #008a10;
+                }
+            }
+        }
+        .play-btn {
+            font-size: 40px;
+            width: 200px;
+            height: 65px;
+        }
+    }
+}
+
+@media only screen and (max-width: 530px) {
+    .question-and-answers-container {
+        .question-text {
+            font-size: 20px;
+        }
+    }
+    .confirm-help-modal,
+    .game-won-modal,
+    .game-lost-modal {
+        max-width: 400px;
+        padding: 20px 20px 15px;
+        .modal__big-text {
+            font-size: 40px;
+        }
+        .modal__avatar,
+        .modal__avatar-container {
+            width: 200px;
+            height: 200px;
+        }
+    }
+    .game-won-modal,
+    .game-lost-modal {
+        padding: 5px 20px 15px;
+    }
+}
+
+@media only screen and (max-width: 475px) {
+    .question-and-answers-container {
+        .skip-question-btn,
+        .help-btn {
+            bottom: calc(100% + 7px);
+        }
+    }
+    .question-text-container {
+        .question-text {
+            font-size: 18px;
+        }
+        min-height: auto;
+        .question-text {
+            font-size: 20px;
+        }
+        .curl-cut {
+            max-width: 0;
+            max-height: 0;
+            overflow: hidden;
+        }
+        .question-text-container__central {
+            margin: 0 7px;
+            padding: 5px 25px;
+            min-height: 80px;
+            border-radius: 40px;
+            &::before {
+                inset: -7px;
+                border-radius: 47px;
+            }
+        }
+    }
+    .new-game-btn {
+        font-size: 20px;
+        height: 46px;
+        top: 10px;
+        left: 10px;
+    }
+}
+
+@media only screen and (max-width: 460px) {
+    .chose-settings-container {
+        .choose-avatar-warning,
+        .chose-difficulty-warning {
+            font-size: 13px;
+        }
+        .chose-difficulty-container {
+            h2 {
+                font-size: 20px;
+            }
+            .difficulty-bnts-container {
+                column-gap: 10px;
+            }
+            .difficulty-btn {
+                font-size: 18px;
+                height: 40px;
+            }
+        }
+        .choose-avatar-container {
+            h2 {
+                font-size: 20px;
+            }
+            .avatar-cards-container {
+                column-gap: 15px;
+                .avatar-card {
+                    width: 100px;
+                    height: 110px;
+                }
+                .avatar-card.selected {
+                    border: 4px solid #008a10;
+                    .selected-checkmark {
+                        width: 25px;
+                        height: 25px;
+                        border: 3px solid #008a10;
+                        i {
+                            font-size: 20px;
+                        }
+                    }
+                }
+            }
+        }
+        .play-btn {
+            font-size: 30px;
+            width: 170px;
+            height: 55px;
+        }
+    }
+}
+
+@media only screen and (max-width: 430px) {
+    .confirm-help-modal,
+    .game-won-modal,
+    .game-lost-modal {
+        max-width: 320px;
+        padding: 20px 15px 15px;
+        .modal__big-text {
+            font-size: 35px;
+        }
+        .modal__avatar,
+        .modal__avatar-container {
+            width: 170px;
+            height: 170px;
+        }
+        .modal__buttons-container {
+            button,
+            a {
+                font-size: 21px;
+                padding: 0.2em 1em;
+            }
+        }
+    }
+    .game-won-modal,
+    .game-lost-modal {
+        padding: 5px 15px 10px;
+    }
+    .confirm-help-modal {
+        p:nth-of-type(1) {
+            font-size: 20px;
+        }
+    }
+}
+
+@media only screen and (max-width: 402px) {
+    .chose-settings-container {
+        .chose-difficulty-container {
+            .difficulty-bnts-container {
+                column-gap: 5px;
+            }
+            .difficulty-btn {
+                font-size: 16px;
+                height: 36px;
+            }
+        }
+        .choose-avatar-container {
+            .avatar-cards-container {
+                column-gap: 15px;
+                .avatar-card {
+                    width: 80px;
+                    height: 90px;
+                }
+                .avatar-card.selected {
+                    border: 3px solid #008a10;
+                    .selected-checkmark {
+                        width: 20px;
+                        height: 20px;
+                        border: 2px solid #008a10;
+                        i {
+                            font-size: 12px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 355px) {
+    .chose-settings-container {
+        .chose-difficulty-container {
+            .difficulty-btn {
+                font-size: 14px;
+                height: 32px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-height: 700px) {
+    .avatar-container {
+        display: none;
+    }
+}
+
+@media only screen and (max-height: 450px) {
+    .confirm-help-modal,
+    .game-won-modal,
+    .game-lost-modal {
+        max-width: 400px;
+        padding: 20px 20px 15px;
+        .modal__big-text {
+            font-size: 40px;
+        }
+        .modal__avatar,
+        .modal__avatar-container {
+            width: 200px;
+            height: 200px;
+        }
+    }
+    .game-won-modal,
+    .game-lost-modal {
+        padding: 5px 15px 10px;
+    }
+}
+
+@media only screen and (max-height: 400px) {
+    .game-won-modal,
+    .game-lost-modal {
+        max-width: 320px;
+        padding: 5px 15px 10px;
+        .modal__big-text {
+            font-size: 35px;
+        }
+        .modal__avatar,
+        .modal__avatar-container {
+            width: 170px;
+            height: 170px;
+        }
+        .modal__buttons-container {
+            button,
+            a {
+                font-size: 21px;
+                padding: 0.2em 1em;
+            }
+        }
+    }
+}
+
+@media only screen and (max-height: 700px) {
+    .chose-settings-container {
+        row-gap: 5px;
+        .choose-avatar-warning,
+        .chose-difficulty-warning {
+            font-size: 16px;
+        }
+        .chose-difficulty-container {
+            h2 {
+                font-size: 25px;
+            }
+            .difficulty-btn {
+                font-size: 22px;
+                height: 48px;
+            }
+        }
+        .choose-avatar-container {
+            h2 {
+                font-size: 25px;
+            }
+            .avatar-cards-container {
+                .avatar-card {
+                    width: 150px;
+                    height: 170px;
+                }
+            }
+        }
+        .play-btn {
+            font-size: 40px;
+            width: 200px;
+            height: 65px;
+        }
+    }
+}
+
+@media only screen and (max-height: 530px) {
+    .chose-settings-container {
+        .choose-avatar-warning,
+        .chose-difficulty-warning {
+            font-size: 14px;
+        }
+        .chose-difficulty-container {
+            h2 {
+                font-size: 22px;
+            }
+            .difficulty-bnts-container {
+                column-gap: 15px;
+            }
+            .difficulty-btn {
+                font-size: 20px;
+                height: 45px;
+                border: solid 3px #008cff;
+            }
+        }
+        .choose-avatar-container {
+            h2 {
+                font-size: 22px;
+            }
+            .avatar-cards-container {
+                column-gap: 20px;
+                .avatar-card {
+                    width: 120px;
+                    height: 140px;
+                }
+                .avatar-card.selected {
+                    border: 5px solid #008a10;
+                }
+            }
+        }
+        .play-btn {
+            font-size: 40px;
+            width: 200px;
+            height: 65px;
+        }
+    }
+}
+
+@media only screen and (max-height: 480px) {
+    .chose-settings-container {
+        .choose-avatar-warning,
+        .chose-difficulty-warning {
+            font-size: 13px;
+        }
+        .chose-difficulty-container {
+            h2 {
+                font-size: 20px;
+            }
+            .difficulty-bnts-container {
+                column-gap: 10px;
+            }
+            .difficulty-btn {
+                font-size: 18px;
+                height: 40px;
+            }
+        }
+        .choose-avatar-container {
+            h2 {
+                font-size: 20px;
+            }
+            .avatar-cards-container {
+                column-gap: 15px;
+                .avatar-card {
+                    width: 100px;
+                    height: 110px;
+                }
+                .avatar-card.selected {
+                    border: 4px solid #008a10;
+                    .selected-checkmark {
+                        width: 25px;
+                        height: 25px;
+                        border: 3px solid #008a10;
+                        i {
+                            font-size: 20px;
+                        }
+                    }
+                }
+            }
+        }
+        .play-btn {
+            font-size: 30px;
+            width: 170px;
+            height: 55px;
+        }
+    }
+}
+
+@media only screen and (max-height: 420px) {
+    .chose-settings-container {
+        padding: 10px 20px 20px;
+        .chose-difficulty-container {
+            .difficulty-bnts-container {
+                column-gap: 5px;
+            }
+            .difficulty-btn {
+                font-size: 16px;
+                height: 36px;
+            }
+        }
+        .choose-avatar-container {
+            .avatar-cards-container {
+                column-gap: 15px;
+                .avatar-card {
+                    width: 80px;
+                    height: 90px;
+                }
+                .avatar-card.selected {
+                    border: 3px solid #008a10;
+                    .selected-checkmark {
+                        width: 20px;
+                        height: 20px;
+                        border: 2px solid #008a10;
+                        i {
+                            font-size: 12px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-height: 385px) {
+    .chose-settings-container {
+        .chose-difficulty-container {
+            h2 {
+                padding-bottom: 0.3em;
+            }
+            .difficulty-bnts-container {
+                .difficulty-btn {
+                    height: 30px;
+                }
+            }
+            .chose-difficulty-warning {
+                margin-top: 5px;
+            }
+        }
+        .choose-avatar-container {
+            padding-bottom: 0px;
+            h2 {
+                padding-bottom: 0.3em;
+            }
+            .avatar-cards-container {
+                .avatar-card {
+                    width: 80px;
+                    height: 80px;
+                }
+            }
+            .choose-avatar-warning {
+                margin-top: 5px;
+            }
+        }
+        .play-btn {
+            height: 50px;
+        }
+    }
+}
+
+.chaser-container--mobile {
+    position: fixed;
+    left: 50%;
+    bottom: auto;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transform-origin: center center;
+    z-index: 75;
+    transition: all 0.3s;
+}
+.chaser-container--mobile.open {
+    transform: translate(-50%, -50%) scale(1);
+}

@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Kviz</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link href="css/style.css" rel="stylesheet" type="text/css" />
+        <link href="css/responsive.css" rel="stylesheet" type="text/css" />
+        <link rel="icon" href="img/favicon.png" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap"
+            rel="stylesheet"
+        />
+        <script
+            src="https://kit.fontawesome.com/5603326328.js"
+            crossorigin="anonymous"
+        ></script>
+    </head>
+    <body>
+        <div class="studio-bg">
+            <img src="img/studio-bg.jpg" alt="" />
+        </div>
+        <a href="index.html" class="new-game-btn">new game</a>
+        <div class="avatar-container">
+            <img src="" alt="" class="avatar" />
+        </div>
+
+        <div class="chaser-container">
+            <h2 class="chaser__title">The Chaser</h2>
+            <div class="chaser__blocks-container"></div>
+            <div class="chaser__winner">
+                <i class="fas fa-caret-right"></i>
+                <span>WINNER</span>
+                <i class="fas fa-caret-left"></i>
+            </div>
+        </div>
+
+        <div class="game-lost-modal">
+            <p class="modal__big-text">You Lost!</p>
+            <div class="modal__avatar-container modal__avatar-container--red">
+                <img class="modal__avatar avatar" src="" alt="" />>
+            </div>
+            <div class="modal__buttons-container">
+                <button class="close-modal-btn js-close-modal-btn">
+                    Close
+                </button>
+                <a href="index.html" class="modal__new-game-btn">Try Again</a>
+            </div>
+            <button class="x-close-modal-btn js-close-modal-btn">
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <div class="game-won-modal">
+            <p class="modal__big-text">You Won!</p>
+            <div class="modal__avatar-container modal__avatar-container--green">
+                <img class="modal__avatar avatar" src="" alt="" />>
+            </div>
+            <div class="modal__buttons-container">
+                <button class="close-modal-btn js-close-modal-btn">
+                    Close
+                </button>
+                <a href="index.html" class="modal__new-game-btn">Play Again</a>
+            </div>
+            <button class="x-close-modal-btn js-close-modal-btn">
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <div class="confirm-help-modal">
+            <div class="confirm-help-modal__icon active">
+                <svg
+                    id="Layer_3"
+                    data-name="Layer 3"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 60 63.06"
+                    class="order-checkmark-svg"
+                >
+                    <defs>
+                        <style>
+                            .cls-7 {
+                                fill: none;
+                                stroke: #00b115;
+                                stroke-linecap: round;
+                                stroke-linejoin: round;
+                                stroke-width: 10px;
+                            }
+                        </style>
+                    </defs>
+                    <path
+                        class="cls-7 help-checkmark-path"
+                        d="M11.76,38.33,27.88,59.76,59.76,8.7"
+                        transform="translate(-5.76 -2.7)"
+                    />
+                </svg>
+            </div>
+            <p>
+                This help removes two wrong answers and
+                <span class="text--red">it is one use only.</span>
+            </p>
+            <p>Help succesfuly used!</p>
+            <div class="modal__buttons-container">
+                <button class="close-modal-btn js-close-modal-btn">
+                    Cancel
+                </button>
+                <button class="confirm-help-btn">Use Help</button>
+            </div>
+            <button class="x-close-modal-btn js-close-modal-btn">
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <div class="overlay"></div>
+
+        <div class="opening-cover opening-cover--left">
+            <div class="opening-cover__bg opening-cover__bg--left">
+                <img src="img/opening-cover-bg-left.jpg" alt="" />
+            </div>
+        </div>
+        <div class="opening-cover opening-cover--right">
+            <div class="opening-cover__bg opening-cover__bg--right">
+                <img src="img/opening-cover-bg-right.jpg" alt="" />
+            </div>
+        </div>
+
+        <div class="chose-settings-container">
+            <div class="chose-difficulty-container">
+                <h2>Choose difficulty</h2>
+                <div class="difficulty-bnts-container">
+                    <button
+                        class="difficulty-btn active"
+                        data-difficulty="easy"
+                    >
+                        <div class="selected"><i class="fas fa-check"></i></div>
+                        Easy
+                    </button>
+                    <button
+                        class="difficulty-btn active"
+                        data-difficulty="normal"
+                    >
+                        <div class="selected"><i class="fas fa-check"></i></div>
+                        Normal
+                    </button>
+                    <button
+                        class="difficulty-btn active"
+                        data-difficulty="hard"
+                    >
+                        <div class="selected"><i class="fas fa-check"></i></div>
+                        Hard
+                    </button>
+                </div>
+                <p class="chose-difficulty-warning">
+                    Pleease Choose Your Difficulty!
+                </p>
+            </div>
+            <div class="choose-avatar-container">
+                <h2>Choose your avatar</h2>
+                <div class="avatar-cards-container">
+                    <button class="avatar-card active" data-avatar="one">
+                        <div class="selected-checkmark">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <img src="img/avatar-one.png" alt="" />
+                    </button>
+                    <button class="avatar-card active" data-avatar="two">
+                        <div class="selected-checkmark">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <img src="img/avatar-two.png" alt="" />
+                    </button>
+                    <button class="avatar-card active" data-avatar="three">
+                        <div class="selected-checkmark">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <img src="img/avatar-three.png" alt="" />
+                    </button>
+                </div>
+                <p class="choose-avatar-warning">Please Choose Your Avatar!</p>
+            </div>
+            <button class="play-btn active"><span>play</span></button>
+        </div>
+
+        <div class="question-and-answers-container">
+            <button class="skip-question-btn active">skip</button>
+            <button class="help-btn active">help</button>
+            <div class="question-and-answers-container__bg">
+                <div></div>
+            </div>
+            <div class="question-text-container">
+                <div class="curl-cut curl-cut--left">
+                    <svg
+                        id="Layer_1"
+                        data-name="Layer 1"
+                        xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                        viewBox="0 0 77 89.68"
+                        class="curl-svg"
+                    >
+                        <defs>
+                            <style>
+                                .cls-1 {
+                                    fill: url(#linear-gradient);
+                                }
+                            </style>
+                            <linearGradient
+                                id="linear-gradient"
+                                x1="275.27"
+                                y1="7.33"
+                                x2="275.27"
+                                y2="95.14"
+                                gradientTransform="translate(-236.77)"
+                                gradientUnits="userSpaceOnUse"
+                            >
+                                <stop offset="0" stop-color="#141414" />
+                                <stop offset="0.15" stop-color="#3b3b3b" />
+                                <stop offset="1" stop-color="#1d1d1d" />
+                            </linearGradient>
+                        </defs>
+                        <path
+                            class="cls-1"
+                            d="M0,52a63.87,63.87,0,0,0,13.25-6.63c13.93-9.13,17.12-19.21,25.48-26.84C45.08,12.73,56.21,6.71,77,7.19V96.81c-20.79.48-31.92-5.54-38.27-11.34-8.36-7.63-11.55-17.71-25.48-26.84A63.87,63.87,0,0,0,0,52"
+                            transform="translate(0 -7.16)"
+                        />
+                    </svg>
+
+                    <svg
+                        id="Layer_1"
+                        data-name="Layer 1"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 79.55 103.68"
+                        class="curl-border curl-border--left"
+                    >
+                        <defs>
+                            <style>
+                                .cls-2 {
+                                    fill: none;
+                                    stroke: #1467aa;
+                                    stroke-miterlimit: 10;
+                                    stroke-width: 14px;
+                                }
+                            </style>
+                        </defs>
+                        <path
+                            class="cls-2"
+                            d="M77,96.81c-20.79.48-31.92-5.54-38.27-11.34-8.36-7.63-11.55-17.71-25.48-26.84A63.87,63.87,0,0,0,0,52"
+                            transform="translate(2.39 -0.16)"
+                        />
+                        <path
+                            class="cls-2"
+                            d="M0,52a63.87,63.87,0,0,0,13.25-6.63c13.93-9.13,17.12-19.21,25.48-26.84C45.08,12.73,56.21,6.71,77,7.19"
+                            transform="translate(2.39 -0.16)"
+                        />
+                    </svg>
+                </div>
+                <div class="question-text-container__central">
+                    <p class="question-text"></p>
+                </div>
+                <div class="curl-cut curl-cut--right">
+                    <svg
+                        id="Layer_1"
+                        data-name="Layer 1"
+                        xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                        viewBox="0 0 77 89.68"
+                    >
+                        <defs>
+                            <style>
+                                .cls-1 {
+                                    fill: url(#linear-gradient);
+                                }
+                            </style>
+                            <linearGradient
+                                id="linear-gradient"
+                                x1="275.27"
+                                y1="7.33"
+                                x2="275.27"
+                                y2="95.14"
+                                gradientTransform="matrix(-1, 0, 0, 1, 313.77, 0)"
+                                gradientUnits="userSpaceOnUse"
+                            >
+                                <stop offset="0" stop-color="#141414" />
+                                <stop offset="0.15" stop-color="#3b3b3b" />
+                                <stop offset="1" stop-color="#1d1d1d" />
+                            </linearGradient>
+                        </defs>
+                        <path
+                            class="cls-1"
+                            d="M77,52a63.87,63.87,0,0,1-13.25-6.63C49.82,36.24,46.63,26.16,38.27,18.53,31.92,12.73,20.79,6.71,0,7.19V96.81c20.79.48,31.92-5.54,38.27-11.34,8.36-7.63,11.55-17.71,25.48-26.84A63.87,63.87,0,0,1,77,52"
+                            transform="translate(0 -7.16)"
+                        />
+                    </svg>
+                    <svg
+                        id="Layer_1"
+                        data-name="Layer 1"
+                        xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                        viewBox="0 0 77 89.68"
+                        class="curl-border curl-left--right"
+                    >
+                        <defs>
+                            <style>
+                                .cls-1 {
+                                    fill: url(#linear-gradient);
+                                }
+                            </style>
+                            <linearGradient
+                                id="linear-gradient"
+                                x1="275.27"
+                                y1="7.33"
+                                x2="275.27"
+                                y2="95.14"
+                                gradientTransform="matrix(-1, 0, 0, 1, 313.77, 0)"
+                                gradientUnits="userSpaceOnUse"
+                            >
+                                <stop offset="0" stop-color="#141414" />
+                                <stop offset="0.15" stop-color="#3b3b3b" />
+                                <stop offset="1" stop-color="#1d1d1d" />
+                            </linearGradient>
+                        </defs>
+                        <path
+                            class="cls-2"
+                            d="M77,52a63.87,63.87,0,0,1-13.25-6.63C49.82,36.24,46.63,26.16,38.27,18.53,31.92,12.73,20.79,6.71,0,7.19V96.81c20.79.48,31.92-5.54,38.27-11.34,8.36-7.63,11.55-17.71,25.48-26.84A63.87,63.87,0,0,1,77,52"
+                            transform="translate(0 -7.16)"
+                        />
+                    </svg>
+                </div>
+            </div>
+            <div class="answer-buttons-container">
+                <button class="answer-button">
+                    <div class="answer-button--clipped">
+                        <div class="curl-cut curl-cut--left">
+                            <svg
+                                id="Layer_1"
+                                data-name="Layer 1"
+                                xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink"
+                                viewBox="0 0 77 89.68"
+                                class="curl-svg"
+                            >
+                                <defs>
+                                    <style>
+                                        .cls-1 {
+                                            fill: url(#linear-gradient);
+                                        }
+                                    </style>
+                                    <linearGradient
+                                        id="linear-gradient"
+                                        x1="275.27"
+                                        y1="7.33"
+                                        x2="275.27"
+                                        y2="95.14"
+                                        gradientTransform="translate(-236.77)"
+                                        gradientUnits="userSpaceOnUse"
+                                    >
+                                        <stop offset="0" stop-color="#141414" />
+                                        <stop
+                                            offset="0.15"
+                                            stop-color="#3b3b3b"
+                                        />
+                                        <stop offset="1" stop-color="#1d1d1d" />
+                                    </linearGradient>
+                                </defs>
+                                <path
+                                    class="cls-1"
+                                    d="M0,52a63.87,63.87,0,0,0,13.25-6.63c13.93-9.13,17.12-19.21,25.48-26.84C45.08,12.73,56.21,6.71,77,7.19V96.81c-20.79.48-31.92-5.54-38.27-11.34-8.36-7.63-11.55-17.71-25.48-26.84A63.87,63.87,0,0,0,0,52"
+                                    transform="translate(0 -7.16)"
+                                />
+                            </svg>
+
+                            <svg
+                                id="Layer_1"
+                                data-name="Layer 1"
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 79.55 103.68"
+                                class="curl-border curl-border--left"
+                            >
+                                <defs>
+                                    <style>
+                                        .cls-2 {
+                                            fill: none;
+                                            stroke: #1467aa;
+                                            stroke-miterlimit: 10;
+                                            stroke-width: 14px;
+                                        }
+                                    </style>
+                                </defs>
+                                <path
+                                    class="cls-2"
+                                    d="M77,96.81c-20.79.48-31.92-5.54-38.27-11.34-8.36-7.63-11.55-17.71-25.48-26.84A63.87,63.87,0,0,0,0,52"
+                                    transform="translate(2.39 -0.16)"
+                                />
+                                <path
+                                    class="cls-2"
+                                    d="M0,52a63.87,63.87,0,0,0,13.25-6.63c13.93-9.13,17.12-19.21,25.48-26.84C45.08,12.73,56.21,6.71,77,7.19"
+                                    transform="translate(2.39 -0.16)"
+                                />
+                            </svg>
+                        </div>
+                        <div class="answer-button__central">
+                            <span>A.</span>
+                            <span class="answer-option"></span>
+                        </div>
+                        <div class="curl-cut curl-cut--right">
+                            <svg
+                                id="Layer_1"
+                                data-name="Layer 1"
+                                xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink"
+                                viewBox="0 0 77 89.68"
+                            >
+                                <defs>
+                                    <style>
+                                        .cls-1 {
+                                            fill: url(#linear-gradient);
+                                        }
+                                    </style>
+                                    <linearGradient
+                                        id="linear-gradient"
+                                        x1="275.27"
+                                        y1="7.33"
+                                        x2="275.27"
+                                        y2="95.14"
+                                        gradientTransform="matrix(-1, 0, 0, 1, 313.77, 0)"
+                                        gradientUnits="userSpaceOnUse"
+                                    >
+                                        <stop offset="0" stop-color="#141414" />
+                                        <stop
+                                            offset="0.15"
+                                            stop-color="#3b3b3b"
+                                        />
+                                        <stop offset="1" stop-color="#1d1d1d" />
+                                    </linearGradient>
+                                </defs>
+                                <path
+                                    class="cls-1"
+                                    d="M77,52a63.87,63.87,0,0,1-13.25-6.63C49.82,36.24,46.63,26.16,38.27,18.53,31.92,12.73,20.79,6.71,0,7.19V96.81c20.79.48,31.92-5.54,38.27-11.34,8.36-7.63,11.55-17.71,25.48-26.84A63.87,63.87,0,0,1,77,52"
+                                    transform="translate(0 -7.16)"
+                                />
+                            </svg>
+                            <svg
+                                id="Layer_1"
+                                data-name="Layer 1"
+                                xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink"
+                                viewBox="0 0 77 89.68"
+                                class="curl-border curl-left--right"
+                            >
+                                <defs>
+                                    <style>
+                                        .cls-1 {
+                                            fill: url(#linear-gradient);
+                                        }
+                                    </style>
+                                    <linearGradient
+                                        id="linear-gradient"
+                                        x1="275.27"
+                                        y1="7.33"
+                                        x2="275.27"
+                                        y2="95.14"
+                                        gradientTransform="matrix(-1, 0, 0, 1, 313.77, 0)"
+                                        gradientUnits="userSpaceOnUse"
+                                    >
+                                        <stop offset="0" stop-color="#141414" />
+                                        <stop
+                                            offset="0.15"
+                                            stop-color="#3b3b3b"
+                                        />
+                                        <stop offset="1" stop-color="#1d1d1d" />
+                                    </linearGradient>
+                                </defs>
+                                <path
+                                    class="cls-2"
+                                    d="M77,52a63.87,63.87,0,0,1-13.25-6.63C49.82,36.24,46.63,26.16,38.27,18.53,31.92,12.73,20.79,6.71,0,7.19V96.81c20.79.48,31.92-5.54,38.27-11.34,8.36-7.63,11.55-17.71,25.48-26.84A63.87,63.87,0,0,1,77,52"
+                                    transform="translate(0 -7.16)"
+                                />
+                            </svg>
+                        </div>
+                    </div>
+                </button>
+                <button class="answer-button">
+                    <div class="answer-button--clipped">
+                        <div class="curl-cut curl-cut--left">
+                            <svg
+                                id="Layer_1"
+                                data-name="Layer 1"
+                                xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink"
+                                viewBox="0 0 77 89.68"
+                                class="curl-svg"
+                            >
+                                <defs>
+                                    <style>
+                                        .cls-1 {
+                                            fill: url(#linear-gradient);
+                                        }
+                                    </style>
+                                    <linearGradient
+                                        id="linear-gradient"
+                                        x1="275.27"
+                                        y1="7.33"
+                                        x2="275.27"
+                                        y2="95.14"
+                                        gradientTransform="translate(-236.77)"
+                                        gradientUnits="userSpaceOnUse"
+                                    >
+                                        <stop offset="0" stop-color="#141414" />
+                                        <stop
+                                            offset="0.15"
+                                            stop-color="#3b3b3b"
+                                        />
+                                        <stop offset="1" stop-color="#1d1d1d" />
+                                    </linearGradient>
+                                </defs>
+                                <path
+                                    class="cls-1"
+                                    d="M0,52a63.87,63.87,0,0,0,13.25-6.63c13.93-9.13,17.12-19.21,25.48-26.84C45.08,12.73,56.21,6.71,77,7.19V96.81c-20.79.48-31.92-5.54-38.27-11.34-8.36-7.63-11.55-17.71-25.48-26.84A63.87,63.87,0,0,0,0,52"
+                                    transform="translate(0 -7.16)"
+                                />
+                            </svg>
+
+                            <svg
+                                id="Layer_1"
+                                data-name="Layer 1"
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 79.55 103.68"
+                                class="curl-border curl-border--left"
+                            >
+                                <defs>
+                                    <style>
+                                        .cls-2 {
+                                            fill: none;
+                                            stroke: #1467aa;
+                                            stroke-miterlimit: 10;
+                                            stroke-width: 14px;
+                                        }
+                                    </style>
+                                </defs>
+                                <path
+                                    class="cls-2"
+                                    d="M77,96.81c-20.79.48-31.92-5.54-38.27-11.34-8.36-7.63-11.55-17.71-25.48-26.84A63.87,63.87,0,0,0,0,52"
+                                    transform="translate(2.39 -0.16)"
+                                />
+                                <path
+                                    class="cls-2"
+                                    d="M0,52a63.87,63.87,0,0,0,13.25-6.63c13.93-9.13,17.12-19.21,25.48-26.84C45.08,12.73,56.21,6.71,77,7.19"
+                                    transform="translate(2.39 -0.16)"
+                                />
+                            </svg>
+                        </div>
+                        <div class="answer-button__central">
+                            <span>B.</span>
+                            <span class="answer-option"></span>
+                        </div>
+                        <div class="curl-cut curl-cut--right">
+                            <svg
+                                id="Layer_1"
+                                data-name="Layer 1"
+                                xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink"
+                                viewBox="0 0 77 89.68"
+                            >
+                                <defs>
+                                    <style>
+                                        .cls-1 {
+                                            fill: url(#linear-gradient);
+                                        }
+                                    </style>
+                                    <linearGradient
+                                        id="linear-gradient"
+                                        x1="275.27"
+                                        y1="7.33"
+                                        x2="275.27"
+                                        y2="95.14"
+                                        gradientTransform="matrix(-1, 0, 0, 1, 313.77, 0)"
+                                        gradientUnits="userSpaceOnUse"
+                                    >
+                                        <stop offset="0" stop-color="#141414" />
+                                        <stop
+                                            offset="0.15"
+                                            stop-color="#3b3b3b"
+                                        />
+                                        <stop offset="1" stop-color="#1d1d1d" />
+                                    </linearGradient>
+                                </defs>
+                                <path
+                                    class="cls-1"
+                                    d="M77,52a63.87,63.87,0,0,1-13.25-6.63C49.82,36.24,46.63,26.16,38.27,18.53,31.92,12.73,20.79,6.71,0,7.19V96.81c20.79.48,31.92-5.54,38.27-11.34,8.36-7.63,11.55-17.71,25.48-26.84A63.87,63.87,0,0,1,77,52"
+                                    transform="translate(0 -7.16)"
+                                />
+                            </svg>
+                            <svg
+                                id="Layer_1"
+                                data-name="Layer 1"
+                                xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink"
+                                viewBox="0 0 77 89.68"
+                                class="curl-border curl-left--right"
+                            >
+                                <defs>
+                                    <style>
+                                        .cls-1 {
+                                            fill: url(#linear-gradient);
+                                        }
+                                    </style>
+                                    <linearGradient
+                                        id="linear-gradient"
+                                        x1="275.27"
+                                        y1="7.33"
+                                        x2="275.27"
+                                        y2="95.14"
+                                        gradientTransform="matrix(-1, 0, 0, 1, 313.77, 0)"
+                                        gradientUnits="userSpaceOnUse"
+                                    >
+                                        <stop offset="0" stop-color="#141414" />
+                                        <stop
+                                            offset="0.15"
+                                            stop-color="#3b3b3b"
+                                        />
+                                        <stop offset="1" stop-color="#1d1d1d" />
+                                    </linearGradient>
+                                </defs>
+                                <path
+                                    class="cls-2"
+                                    d="M77,52a63.87,63.87,0,0,1-13.25-6.63C49.82,36.24,46.63,26.16,38.27,18.53,31.92,12.73,20.79,6.71,0,7.19V96.81c20.79.48,31.92-5.54,38.27-11.34,8.36-7.63,11.55-17.71,25.48-26.84A63.87,63.87,0,0,1,77,52"
+                                    transform="translate(0 -7.16)"
+                                />
+                            </svg>
+                        </div>
+                    </div>
+                </button>
+                <button class="answer-button">
+                    <div class="answer-button--clipped">
+                        <div class="curl-cut curl-cut--left">
+                            <svg
+                                id="Layer_1"
+                                data-name="Layer 1"
+                                xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink"
+                                viewBox="0 0 77 89.68"
+                                class="curl-svg"
+                            >
+                                <defs>
+                                    <style>
+                                        .cls-1 {
+                                            fill: url(#linear-gradient);
+                                        }
+                                    </style>
+                                    <linearGradient
+                                        id="linear-gradient"
+                                        x1="275.27"
+                                        y1="7.33"
+                                        x2="275.27"
+                                        y2="95.14"
+                                        gradientTransform="translate(-236.77)"
+                                        gradientUnits="userSpaceOnUse"
+                                    >
+                                        <stop offset="0" stop-color="#141414" />
+                                        <stop
+                                            offset="0.15"
+                                            stop-color="#3b3b3b"
+                                        />
+                                        <stop offset="1" stop-color="#1d1d1d" />
+                                    </linearGradient>
+                                </defs>
+                                <path
+                                    class="cls-1"
+                                    d="M0,52a63.87,63.87,0,0,0,13.25-6.63c13.93-9.13,17.12-19.21,25.48-26.84C45.08,12.73,56.21,6.71,77,7.19V96.81c-20.79.48-31.92-5.54-38.27-11.34-8.36-7.63-11.55-17.71-25.48-26.84A63.87,63.87,0,0,0,0,52"
+                                    transform="translate(0 -7.16)"
+                                />
+                            </svg>
+
+                            <svg
+                                id="Layer_1"
+                                data-name="Layer 1"
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 79.55 103.68"
+                                class="curl-border curl-border--left"
+                            >
+                                <defs>
+                                    <style>
+                                        .cls-2 {
+                                            fill: none;
+                                            stroke: #1467aa;
+                                            stroke-miterlimit: 10;
+                                            stroke-width: 14px;
+                                        }
+                                    </style>
+                                </defs>
+                                <path
+                                    class="cls-2"
+                                    d="M77,96.81c-20.79.48-31.92-5.54-38.27-11.34-8.36-7.63-11.55-17.71-25.48-26.84A63.87,63.87,0,0,0,0,52"
+                                    transform="translate(2.39 -0.16)"
+                                />
+                                <path
+                                    class="cls-2"
+                                    d="M0,52a63.87,63.87,0,0,0,13.25-6.63c13.93-9.13,17.12-19.21,25.48-26.84C45.08,12.73,56.21,6.71,77,7.19"
+                                    transform="translate(2.39 -0.16)"
+                                />
+                            </svg>
+                        </div>
+                        <div class="answer-button__central">
+                            <span>C.</span>
+                            <span class="answer-option"></span>
+                        </div>
+                        <div class="curl-cut curl-cut--right">
+                            <svg
+                                id="Layer_1"
+                                data-name="Layer 1"
+                                xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink"
+                                viewBox="0 0 77 89.68"
+                            >
+                                <defs>
+                                    <style>
+                                        .cls-1 {
+                                            fill: url(#linear-gradient);
+                                        }
+                                    </style>
+                                    <linearGradient
+                                        id="linear-gradient"
+                                        x1="275.27"
+                                        y1="7.33"
+                                        x2="275.27"
+                                        y2="95.14"
+                                        gradientTransform="matrix(-1, 0, 0, 1, 313.77, 0)"
+                                        gradientUnits="userSpaceOnUse"
+                                    >
+                                        <stop offset="0" stop-color="#141414" />
+                                        <stop
+                                            offset="0.15"
+                                            stop-color="#3b3b3b"
+                                        />
+                                        <stop offset="1" stop-color="#1d1d1d" />
+                                    </linearGradient>
+                                </defs>
+                                <path
+                                    class="cls-1"
+                                    d="M77,52a63.87,63.87,0,0,1-13.25-6.63C49.82,36.24,46.63,26.16,38.27,18.53,31.92,12.73,20.79,6.71,0,7.19V96.81c20.79.48,31.92-5.54,38.27-11.34,8.36-7.63,11.55-17.71,25.48-26.84A63.87,63.87,0,0,1,77,52"
+                                    transform="translate(0 -7.16)"
+                                />
+                            </svg>
+                            <svg
+                                id="Layer_1"
+                                data-name="Layer 1"
+                                xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink"
+                                viewBox="0 0 77 89.68"
+                                class="curl-border curl-left--right"
+                            >
+                                <defs>
+                                    <style>
+                                        .cls-1 {
+                                            fill: url(#linear-gradient);
+                                        }
+                                    </style>
+                                    <linearGradient
+                                        id="linear-gradient"
+                                        x1="275.27"
+                                        y1="7.33"
+                                        x2="275.27"
+                                        y2="95.14"
+                                        gradientTransform="matrix(-1, 0, 0, 1, 313.77, 0)"
+                                        gradientUnits="userSpaceOnUse"
+                                    >
+                                        <stop offset="0" stop-color="#141414" />
+                                        <stop
+                                            offset="0.15"
+                                            stop-color="#3b3b3b"
+                                        />
+                                        <stop offset="1" stop-color="#1d1d1d" />
+                                    </linearGradient>
+                                </defs>
+                                <path
+                                    class="cls-2"
+                                    d="M77,52a63.87,63.87,0,0,1-13.25-6.63C49.82,36.24,46.63,26.16,38.27,18.53,31.92,12.73,20.79,6.71,0,7.19V96.81c20.79.48,31.92-5.54,38.27-11.34,8.36-7.63,11.55-17.71,25.48-26.84A63.87,63.87,0,0,1,77,52"
+                                    transform="translate(0 -7.16)"
+                                />
+                            </svg>
+                        </div>
+                    </div>
+                </button>
+                <button class="answer-button">
+                    <div class="answer-button--clipped">
+                        <div class="curl-cut curl-cut--left">
+                            <svg
+                                id="Layer_1"
+                                data-name="Layer 1"
+                                xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink"
+                                viewBox="0 0 77 89.68"
+                                class="curl-svg"
+                            >
+                                <defs>
+                                    <style>
+                                        .cls-1 {
+                                            fill: url(#linear-gradient);
+                                        }
+                                    </style>
+                                    <linearGradient
+                                        id="linear-gradient"
+                                        x1="275.27"
+                                        y1="7.33"
+                                        x2="275.27"
+                                        y2="95.14"
+                                        gradientTransform="translate(-236.77)"
+                                        gradientUnits="userSpaceOnUse"
+                                    >
+                                        <stop offset="0" stop-color="#141414" />
+                                        <stop
+                                            offset="0.15"
+                                            stop-color="#3b3b3b"
+                                        />
+                                        <stop offset="1" stop-color="#1d1d1d" />
+                                    </linearGradient>
+                                </defs>
+                                <path
+                                    class="cls-1"
+                                    d="M0,52a63.87,63.87,0,0,0,13.25-6.63c13.93-9.13,17.12-19.21,25.48-26.84C45.08,12.73,56.21,6.71,77,7.19V96.81c-20.79.48-31.92-5.54-38.27-11.34-8.36-7.63-11.55-17.71-25.48-26.84A63.87,63.87,0,0,0,0,52"
+                                    transform="translate(0 -7.16)"
+                                />
+                            </svg>
+
+                            <svg
+                                id="Layer_1"
+                                data-name="Layer 1"
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 79.55 103.68"
+                                class="curl-border curl-border--left"
+                            >
+                                <defs>
+                                    <style>
+                                        .cls-2 {
+                                            fill: none;
+                                            stroke: #1467aa;
+                                            stroke-miterlimit: 10;
+                                            stroke-width: 14px;
+                                        }
+                                    </style>
+                                </defs>
+                                <path
+                                    class="cls-2"
+                                    d="M77,96.81c-20.79.48-31.92-5.54-38.27-11.34-8.36-7.63-11.55-17.71-25.48-26.84A63.87,63.87,0,0,0,0,52"
+                                    transform="translate(2.39 -0.16)"
+                                />
+                                <path
+                                    class="cls-2"
+                                    d="M0,52a63.87,63.87,0,0,0,13.25-6.63c13.93-9.13,17.12-19.21,25.48-26.84C45.08,12.73,56.21,6.71,77,7.19"
+                                    transform="translate(2.39 -0.16)"
+                                />
+                            </svg>
+                        </div>
+                        <div class="answer-button__central">
+                            <span>D.</span>
+                            <span class="answer-option"></span>
+                        </div>
+                        <div class="curl-cut curl-cut--right">
+                            <svg
+                                id="Layer_1"
+                                data-name="Layer 1"
+                                xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink"
+                                viewBox="0 0 77 89.68"
+                            >
+                                <defs>
+                                    <style>
+                                        .cls-1 {
+                                            fill: url(#linear-gradient);
+                                        }
+                                    </style>
+                                    <linearGradient
+                                        id="linear-gradient"
+                                        x1="275.27"
+                                        y1="7.33"
+                                        x2="275.27"
+                                        y2="95.14"
+                                        gradientTransform="matrix(-1, 0, 0, 1, 313.77, 0)"
+                                        gradientUnits="userSpaceOnUse"
+                                    >
+                                        <stop offset="0" stop-color="#141414" />
+                                        <stop
+                                            offset="0.15"
+                                            stop-color="#3b3b3b"
+                                        />
+                                        <stop offset="1" stop-color="#1d1d1d" />
+                                    </linearGradient>
+                                </defs>
+                                <path
+                                    class="cls-1"
+                                    d="M77,52a63.87,63.87,0,0,1-13.25-6.63C49.82,36.24,46.63,26.16,38.27,18.53,31.92,12.73,20.79,6.71,0,7.19V96.81c20.79.48,31.92-5.54,38.27-11.34,8.36-7.63,11.55-17.71,25.48-26.84A63.87,63.87,0,0,1,77,52"
+                                    transform="translate(0 -7.16)"
+                                />
+                            </svg>
+                            <svg
+                                id="Layer_1"
+                                data-name="Layer 1"
+                                xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink"
+                                viewBox="0 0 77 89.68"
+                                class="curl-border curl-left--right"
+                            >
+                                <defs>
+                                    <style>
+                                        .cls-1 {
+                                            fill: url(#linear-gradient);
+                                        }
+                                    </style>
+                                    <linearGradient
+                                        id="linear-gradient"
+                                        x1="275.27"
+                                        y1="7.33"
+                                        x2="275.27"
+                                        y2="95.14"
+                                        gradientTransform="matrix(-1, 0, 0, 1, 313.77, 0)"
+                                        gradientUnits="userSpaceOnUse"
+                                    >
+                                        <stop offset="0" stop-color="#141414" />
+                                        <stop
+                                            offset="0.15"
+                                            stop-color="#3b3b3b"
+                                        />
+                                        <stop offset="1" stop-color="#1d1d1d" />
+                                    </linearGradient>
+                                </defs>
+                                <path
+                                    class="cls-2"
+                                    d="M77,52a63.87,63.87,0,0,1-13.25-6.63C49.82,36.24,46.63,26.16,38.27,18.53,31.92,12.73,20.79,6.71,0,7.19V96.81c20.79.48,31.92-5.54,38.27-11.34,8.36-7.63,11.55-17.71,25.48-26.84A63.87,63.87,0,0,1,77,52"
+                                    transform="translate(0 -7.16)"
+                                />
+                            </svg>
+                        </div>
+                    </div>
+                </button>
+            </div>
+        </div>
+
+        <script src="js/main.js"></script>
+    </body>
+</html>
