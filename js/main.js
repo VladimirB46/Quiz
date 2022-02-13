@@ -400,7 +400,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     // questions and answers
     const answerButtonsSpans = document.querySelectorAll('.answer-option');
-    const answerButtons = document.querySelectorAll('.answer-button--clipped');
+    const answerButtons = document.querySelectorAll('.answer-button');
     const questionTextHtml = document.querySelector('.question-text');
     let questionsArray = [];
     let currentQuestion = null;

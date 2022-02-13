@@ -597,14 +597,13 @@ body {
 .question-text-container {
   max-width: 1200px;
   width: 100%;
-  text-align: center;
   min-height: 90px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -612,6 +611,12 @@ body {
   font-size: 24px;
   position: relative;
   margin-bottom: 15px;
+  background: -webkit-gradient(linear, left bottom, left top, from(#1d1d1d), color-stop(85%, #3b3b3b), to(#141414));
+  background: linear-gradient(0deg, #1d1d1d 0%, #3b3b3b 85%, #141414 100%);
+  border-radius: 45px;
+  border: 7px solid #1467aa;
+  padding: 10px 45px;
+  text-align: center;
 }
 
 .question-text-container::before {
@@ -642,75 +647,6 @@ body {
   background: linear-gradient(90deg, #1467aa 0%, #368ed6 45%, #1467aa 100%);
 }
 
-.question-text-container .question-text-container__central {
-  min-height: 90px;
-  position: relative;
-}
-
-.question-text-container .question-text-container__central::before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  top: -7px;
-  bottom: -7px;
-  background: -webkit-gradient(linear, left top, right top, from(#1467aa), color-stop(45%, #368ed6), to(#1467aa));
-  background: linear-gradient(90deg, #1467aa 0%, #368ed6 45%, #1467aa 100%);
-  left: 0;
-  right: 0;
-}
-
-.question-text-container .curl-cut {
-  width: 77px;
-  height: 104px;
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-negative: 0;
-      flex-shrink: 0;
-}
-
-.question-text-container .curl-cut .curl-border {
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  height: 104px;
-}
-
-.question-text-container .curl-cut .curl-border--left {
-  left: -2px;
-}
-
-.question-text-container .curl-cut .curl-left--right {
-  right: -2px;
-  width: 80px;
-}
-
-.question-text-container .curl-cut .curl-svg {
-  position: relative;
-  z-index: 1;
-}
-
-.question-text-container .question-text-container__central {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  background: -webkit-gradient(linear, left bottom, left top, from(#1d1d1d), color-stop(85%, #3b3b3b), to(#141414));
-  background: linear-gradient(0deg, #1d1d1d 0%, #3b3b3b 85%, #141414 100%);
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
-}
-
 .answer-buttons-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -733,99 +669,12 @@ body {
       -ms-flex-positive: 0;
           flex-grow: 0;
   outline: none;
-  border: none;
-  background: none;
+  border: solid 5px #1467aa;
   position: relative;
-}
-
-.answer-buttons-container .answer-button .answer-button--clipped {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-clip-path: polygon(0% 65%, 0% 25%, 6% 0%, 94% 0%, 100% 25%, 100% 65%, 94% 100%, 6% 100%);
-          clip-path: polygon(0% 65%, 0% 25%, 6% 0%, 94% 0%, 100% 25%, 100% 65%, 94% 100%, 6% 100%);
-}
-
-.answer-buttons-container .answer-button .answer-button--clipped.active:hover {
-  cursor: pointer;
-}
-
-.answer-buttons-container .answer-button .answer-button--clipped.active:hover .answer-button__central {
-  background: linear-gradient(132deg, #d55f00 10%, #d59d00 45%, #d55f00 90%);
-}
-
-.answer-buttons-container .answer-button .answer-button--clipped.active:hover .cls-1 {
-  fill: #d55f00;
-}
-
-.answer-buttons-container .answer-button .answer-button--clipped.true .answer-button__central {
-  background: linear-gradient(132deg, #00d518 10%, #48f45b 45%, #00d518 90%);
-}
-
-.answer-buttons-container .answer-button .answer-button--clipped.true .cls-1 {
-  fill: #00d518;
-}
-
-.answer-buttons-container .answer-button .answer-button--clipped.wrong .answer-button__central {
-  background: linear-gradient(132deg, #d50000 10%, #f44848 45%, #d50000 90%);
-}
-
-.answer-buttons-container .answer-button .answer-button--clipped.wrong .cls-1 {
-  fill: #d50000;
-}
-
-.answer-buttons-container .answer-button .curl-cut {
-  height: 69px;
-  width: 51px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  position: relative;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-negative: 0;
-      flex-shrink: 0;
-}
-
-.answer-buttons-container .answer-button .curl-cut .curl-border {
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  height: 69px;
-}
-
-.answer-buttons-container .answer-button .curl-cut .curl-border--left {
-  left: -1px;
-  height: 69px;
-}
-
-.answer-buttons-container .answer-button .curl-cut .curl-left--right {
-  right: -1px;
-  height: 69px;
-}
-
-.answer-buttons-container .answer-button .curl-cut .curl-svg {
-  position: relative;
-  z-index: 1;
-}
-
-.answer-buttons-container .answer-button .answer-button__central {
   background: -webkit-gradient(linear, left bottom, left top, from(#1d1d1d), color-stop(85%, #3b3b3b), to(#141414));
   background: linear-gradient(0deg, #1d1d1d 0%, #3b3b3b 85%, #141414 100%);
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
-  min-height: 60px;
-  text-align: center;
+  min-height: 70px;
   color: #fff;
-  font-size: 22px;
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -836,33 +685,31 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 0 30px;
+  padding: 5px 60px;
+  border-radius: 35px;
 }
 
-.answer-buttons-container .answer-button .answer-button__central::before {
-  content: "";
+.answer-buttons-container .answer-button .answer-button__label {
   position: absolute;
-  z-index: -1;
-  top: -4.5px;
-  bottom: -4.5px;
-  background: -webkit-gradient(linear, left top, right top, from(#1467aa), color-stop(45%, #368ed6), to(#1467aa));
-  background: linear-gradient(90deg, #1467aa 0%, #368ed6 45%, #1467aa 100%);
-  left: 0;
-  right: 0;
-}
-
-.answer-buttons-container .answer-button .answer-button__central span:nth-of-type(1) {
-  position: absolute;
-  left: 0;
+  left: 20px;
   top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   font-size: 26px;
 }
 
-.answer-buttons-container .answer-button .answer-button__central span:nth-of-type(2) {
+.answer-buttons-container .answer-button .answer-option {
+  font-size: 22px;
   max-width: 100%;
   text-align: center;
+}
+
+.answer-buttons-container .answer-button.active {
+  cursor: pointer;
+}
+
+.answer-buttons-container .answer-button.active:hover {
+  background: linear-gradient(132deg, #d55f00 10%, #d59d00 45%, #d55f00 90%);
 }
 
 .answer-buttons-container .answer-button:nth-child(odd)::before {
@@ -893,20 +740,12 @@ body {
   background: linear-gradient(90deg, #1467aa 0%, #368ed6 45%, #1467aa 100%);
 }
 
-.answer-buttons-container .true .answer-button__central {
+.answer-buttons-container .true {
   background: linear-gradient(132deg, #00d518 10%, #48f45b 45%, #00d518 90%);
 }
 
-.answer-buttons-container .true .cls-1 {
-  fill: #00d518;
-}
-
-.answer-buttons-container .wrong .answer-button__central {
+.answer-buttons-container .wrong {
   background: linear-gradient(132deg, #d50000 10%, #f44848 45%, #d50000 90%);
-}
-
-.answer-buttons-container .wrong .cls-1 {
-  fill: #d50000;
 }
 
 .chaser-container {

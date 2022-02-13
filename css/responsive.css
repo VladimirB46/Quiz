@@ -21,7 +21,7 @@
 }
 
 @media only screen and (max-width: 1000px) {
-  .answer-buttons-container .answer-button .answer-button__central span:nth-of-type(2) {
+  .answer-buttons-container .answer-button .answer-option {
     font-size: 20px;
   }
   .avatar-container {
@@ -57,13 +57,13 @@
   .answer-buttons-container {
     row-gap: 5px;
   }
-  .answer-buttons-container .answer-button .answer-button__central {
-    padding: 0 25px;
+  .answer-buttons-container .answer-button {
+    padding: 5px 50px;
   }
-  .answer-buttons-container .answer-button .answer-button__central span:nth-of-type(1) {
+  .answer-buttons-container .answer-button .answer-button__label {
     font-size: 22px;
   }
-  .answer-buttons-container .answer-button .answer-button__central span:nth-of-type(2) {
+  .answer-buttons-container .answer-button .answer-option {
     font-size: 18px;
   }
 }
@@ -98,17 +98,17 @@
 }
 
 @media only screen and (max-width: 600px) {
+  .question-text-container {
+    padding: 10px 30px;
+  }
   .answer-buttons-container .answer-button {
     -ms-flex-preferred-size: 100%;
         flex-basis: 100%;
   }
-  .answer-buttons-container .answer-button .answer-button__central {
-    padding: 0 30px;
-  }
-  .answer-buttons-container .answer-button .answer-button__central span:nth-of-type(1) {
+  .answer-buttons-container .answer-button .answer-button__label {
     font-size: 24px;
   }
-  .answer-buttons-container .answer-button .answer-button__central span:nth-of-type(2) {
+  .answer-buttons-container .answer-button .answer-option {
     font-size: 20px;
   }
   .new-game-btn {
@@ -158,9 +158,6 @@
 }
 
 @media only screen and (max-width: 530px) {
-  .question-and-answers-container .question-text {
-    font-size: 20px;
-  }
   .confirm-help-modal,
   .game-won-modal,
   .game-lost-modal {
@@ -191,30 +188,6 @@
   .question-and-answers-container .skip-question-btn,
   .question-and-answers-container .help-btn {
     bottom: calc(100% + 7px);
-  }
-  .question-text-container {
-    min-height: auto;
-  }
-  .question-text-container .question-text {
-    font-size: 18px;
-  }
-  .question-text-container .question-text {
-    font-size: 20px;
-  }
-  .question-text-container .curl-cut {
-    max-width: 0;
-    max-height: 0;
-    overflow: hidden;
-  }
-  .question-text-container .question-text-container__central {
-    margin: 0 7px;
-    padding: 5px 25px;
-    min-height: 80px;
-    border-radius: 40px;
-  }
-  .question-text-container .question-text-container__central::before {
-    inset: -7px;
-    border-radius: 47px;
   }
   .new-game-btn {
     font-size: 20px;
