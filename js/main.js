@@ -227,6 +227,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 leftOpeningCover.style.display = 'none';
                 rightOpeningCover.style.display = 'none';
             }, 1500);
+            // enable overlay 
+            overlay.classList.add('open');
+            if (mobileChaser === false) {
+                setTimeout(function() {
+                    overlay.classList.remove('open');
+                }, 1500);
+            }
         }
         // difficulty not chosen 
         if (chosenDifficulty === null) {
