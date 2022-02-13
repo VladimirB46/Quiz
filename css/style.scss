@@ -138,10 +138,6 @@ body {
     overflow: hidden;
     border: solid 4px #fff;
     border-radius: 30px;
-    &:hover {
-        color: #000;
-        background: #fff;
-    }
 }
 .chose-settings-container {
     position: fixed;
@@ -192,17 +188,9 @@ body {
                 display: none;
             }
         }
-        .difficulty-btn.active:hover {
-            background: rgba(0, 140, 255, 0.2);
-            color: #fff;
-            cursor: pointer;
-        }
         .difficulty-btn.selected {
             border: 4px solid #008a10;
             color: #008a10;
-        }
-        .difficulty-btn.selected:hover {
-            background: rgba(0, 138, 16, 0.2);
         }
     }
     .choose-avatar-container {
@@ -418,10 +406,6 @@ body {
         cursor: pointer;
         border: solid 4px #fff;
         color: #fff;
-        &:hover {
-            color: #0c0c0c;
-            background-color: #fff;
-        }
     }
     .skip-question-btn {
         left: calc(50% + 5px);
@@ -500,12 +484,6 @@ body {
             font-size: 22px;
             max-width: 100%;
             text-align: center;
-        }
-    }
-    .answer-button.active {
-        cursor: pointer;
-        &:hover {
-            background: $yellowGradientBg;
         }
     }
     .answer-button:nth-child(odd) {
@@ -890,4 +868,34 @@ body {
     background: rgba(0, 0, 0, 0.4);
     height: 100vh;
     width: 100%;
+}
+// mobile hover fix
+@media (hover: hover) {
+    .answer-button.active {
+        cursor: pointer;
+        &:hover {
+            background: $yellowGradientBg;
+        }
+    }
+    .new-game-btn {
+        &:hover {
+            color: #000;
+            background: #fff;
+        }
+    }
+    .difficulty-btn.active:hover {
+        background: rgba(0, 140, 255, 0.2);
+        color: #fff;
+        cursor: pointer;
+    }
+    .difficulty-btn.selected:hover {
+        background: rgba(0, 138, 16, 0.2);
+    }
+    .skip-question-btn.active,
+    .help-btn.active {
+        &:hover {
+            color: #0c0c0c;
+            background-color: #fff;
+        }
+    }
 }

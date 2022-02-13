@@ -103,11 +103,6 @@ body {
   border-radius: 30px;
 }
 
-.new-game-btn:hover {
-  color: #000;
-  background: #fff;
-}
-
 .chose-settings-container {
   position: fixed;
   top: 50%;
@@ -199,19 +194,9 @@ body {
   display: none;
 }
 
-.chose-settings-container .chose-difficulty-container .difficulty-btn.active:hover {
-  background: rgba(0, 140, 255, 0.2);
-  color: #fff;
-  cursor: pointer;
-}
-
 .chose-settings-container .chose-difficulty-container .difficulty-btn.selected {
   border: 4px solid #008a10;
   color: #008a10;
-}
-
-.chose-settings-container .chose-difficulty-container .difficulty-btn.selected:hover {
-  background: rgba(0, 138, 16, 0.2);
 }
 
 .chose-settings-container .choose-avatar-container {
@@ -564,12 +549,6 @@ body {
   color: #fff;
 }
 
-.question-and-answers-container .skip-question-btn.active:hover,
-.question-and-answers-container .help-btn.active:hover {
-  color: #0c0c0c;
-  background-color: #fff;
-}
-
 .question-and-answers-container .skip-question-btn {
   left: calc(50% + 5px);
 }
@@ -704,14 +683,6 @@ body {
   font-size: 22px;
   max-width: 100%;
   text-align: center;
-}
-
-.answer-buttons-container .answer-button.active {
-  cursor: pointer;
-}
-
-.answer-buttons-container .answer-button.active:hover {
-  background: linear-gradient(132deg, #d55f00 10%, #d59d00 45%, #d55f00 90%);
 }
 
 .answer-buttons-container .answer-button:nth-child(odd)::before {
@@ -1273,5 +1244,31 @@ body {
   background: rgba(0, 0, 0, 0.4);
   height: 100vh;
   width: 100%;
+}
+
+@media (hover: hover) {
+  .answer-button.active {
+    cursor: pointer;
+  }
+  .answer-button.active:hover {
+    background: linear-gradient(132deg, #d55f00 10%, #d59d00 45%, #d55f00 90%);
+  }
+  .new-game-btn:hover {
+    color: #000;
+    background: #fff;
+  }
+  .difficulty-btn.active:hover {
+    background: rgba(0, 140, 255, 0.2);
+    color: #fff;
+    cursor: pointer;
+  }
+  .difficulty-btn.selected:hover {
+    background: rgba(0, 138, 16, 0.2);
+  }
+  .skip-question-btn.active:hover,
+  .help-btn.active:hover {
+    color: #0c0c0c;
+    background-color: #fff;
+  }
 }
 /*# sourceMappingURL=style.css.map */

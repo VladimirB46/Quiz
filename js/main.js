@@ -122,15 +122,15 @@ document.addEventListener('DOMContentLoaded', function() {
             setTimeout(function() {
                 chaserContainer.classList.add('open');
                 overlay.classList.add('open');
-            }, 500);
+            }, 1000);
             setTimeout(function() {
                 currentBlockPosition();
                 currentChaserPosition();
-            }, 1300);
+            }, 1800);
             setTimeout(function() {
                 chaserContainer.classList.remove('open');
                 overlay.classList.remove('open');
-            }, 2500);
+            }, 3000);
         }
     }
 
