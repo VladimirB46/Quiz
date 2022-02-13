@@ -112,8 +112,6 @@
                 width: 100%;
                 flex-wrap: wrap;
                 .avatar-card {
-                    //  width: 150px;
-                    //  height: 170px;
                     width: calc((100vw - 150px) / 3);
                     height: auto;
                     padding-top: 20px;
@@ -181,8 +179,6 @@
             .avatar-cards-container {
                 column-gap: 20px;
                 .avatar-card {
-                    // width: 120px;
-                    // height: 140px;
                     padding-top: 10px;
                     width: calc((100vw - 120px) / 3);
                 }
@@ -254,8 +250,6 @@
             .avatar-cards-container {
                 column-gap: 15px;
                 .avatar-card {
-                    // width: 100px;
-                    // height: 110px;
                     padding-top: 5px;
                     width: calc((100vw - 100px) / 3);
                 }
@@ -330,8 +324,6 @@
                 column-gap: 15px;
                 row-gap: 10px;
                 .avatar-card {
-                    // width: 80px;
-                    // height: 90px;
                     padding: 0;
                     width: calc((100vw - 80px) / 3);
                 }
