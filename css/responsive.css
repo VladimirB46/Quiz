@@ -70,6 +70,7 @@
 
 @media only screen and (max-width: 750px) {
   .chose-settings-container {
+    width: 100%;
     row-gap: 5px;
   }
   .chose-settings-container .choose-avatar-warning,
@@ -83,8 +84,16 @@
     font-size: 22px;
     height: 48px;
   }
+  .chose-settings-container .choose-avatar-container {
+    width: 100%;
+  }
   .chose-settings-container .choose-avatar-container h2 {
     font-size: 25px;
+  }
+  .chose-settings-container .choose-avatar-container .avatar-cards-container {
+    width: 100%;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
   }
   .chose-settings-container .choose-avatar-container .avatar-cards-container .avatar-card {
     width: calc((100vw - 150px) / 3);
@@ -145,6 +154,7 @@
             column-gap: 20px;
   }
   .chose-settings-container .choose-avatar-container .avatar-cards-container .avatar-card {
+    padding-top: 15px;
     width: calc((100vw - 120px) / 3);
   }
   .chose-settings-container .choose-avatar-container .avatar-cards-container .avatar-card.selected {
@@ -217,6 +227,7 @@
             column-gap: 15px;
   }
   .chose-settings-container .choose-avatar-container .avatar-cards-container .avatar-card {
+    padding-top: 10px;
     width: calc((100vw - 100px) / 3);
   }
   .chose-settings-container .choose-avatar-container .avatar-cards-container .avatar-card.selected {
@@ -277,6 +288,9 @@
 }
 
 @media only screen and (max-width: 402px) {
+  .chose-settings-container {
+    padding: 10px;
+  }
   .chose-settings-container .chose-difficulty-container .difficulty-bnts-container {
     -webkit-column-gap: 5px;
             column-gap: 5px;
@@ -288,8 +302,10 @@
   .chose-settings-container .choose-avatar-container .avatar-cards-container {
     -webkit-column-gap: 15px;
             column-gap: 15px;
+    row-gap: 10px;
   }
   .chose-settings-container .choose-avatar-container .avatar-cards-container .avatar-card {
+    padding-top: 5px;
     width: calc((100vw - 80px) / 3);
   }
   .chose-settings-container .choose-avatar-container .avatar-cards-container .avatar-card.selected {

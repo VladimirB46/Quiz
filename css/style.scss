@@ -206,6 +206,7 @@ body {
         .avatar-cards-container {
             @include flexCenter();
             column-gap: 25px;
+            row-gap: 15px;
             .avatar-card {
                 max-width: 220px;
                 width: 220px;

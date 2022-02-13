@@ -84,6 +84,7 @@
 
 @media only screen and (max-width: 750px) {
     .chose-settings-container {
+        width: 100%;
         row-gap: 5px;
         .choose-avatar-warning,
         .chose-difficulty-warning {
@@ -99,10 +100,13 @@
             }
         }
         .choose-avatar-container {
+            width: 100%;
             h2 {
                 font-size: 25px;
             }
             .avatar-cards-container {
+                width: 100%;
+                flex-wrap: wrap;
                 .avatar-card {
                     //  width: 150px;
                     //  height: 170px;
@@ -171,6 +175,7 @@
                 .avatar-card {
                     // width: 120px;
                     // height: 140px;
+                    padding-top: 15px;
                     width: calc((100vw - 120px) / 3);
                 }
                 .avatar-card.selected {
@@ -243,6 +248,7 @@
                 .avatar-card {
                     // width: 100px;
                     // height: 110px;
+                    padding-top: 10px;
                     width: calc((100vw - 100px) / 3);
                 }
                 .avatar-card.selected {
@@ -301,6 +307,7 @@
 
 @media only screen and (max-width: 402px) {
     .chose-settings-container {
+        padding: 10px;
         .chose-difficulty-container {
             .difficulty-bnts-container {
                 column-gap: 5px;
@@ -313,9 +320,11 @@
         .choose-avatar-container {
             .avatar-cards-container {
                 column-gap: 15px;
+                row-gap: 10px;
                 .avatar-card {
                     // width: 80px;
                     // height: 90px;
+                    padding-top: 5px;
                     width: calc((100vw - 80px) / 3);
                 }
                 .avatar-card.selected {
