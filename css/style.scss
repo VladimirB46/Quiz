@@ -171,7 +171,6 @@ body {
         .difficulty-bnts-container {
             @include flexCenter();
             column-gap: 20px;
-            flex-wrap: wrap;
         }
         .difficulty-btn {
             padding: 0 1.5em;
@@ -220,6 +219,7 @@ body {
             @include flexCenter();
             column-gap: 25px;
             .avatar-card {
+                max-width: 220px;
                 width: 220px;
                 height: 250px;
                 background: linear-gradient(to bottom right, #7895ff, #adecff);
