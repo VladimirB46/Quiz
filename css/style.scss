@@ -167,6 +167,7 @@ body {
         .difficulty-bnts-container {
             @include flexCenter();
             column-gap: 20px;
+            row-gap: 10px;
         }
         .difficulty-btn {
             padding: 0 1.5em;

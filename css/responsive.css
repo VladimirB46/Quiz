@@ -77,8 +77,14 @@
   .chose-settings-container .chose-difficulty-warning {
     font-size: 16px;
   }
+  .chose-settings-container .chose-difficulty-container {
+    width: 100%;
+  }
   .chose-settings-container .chose-difficulty-container h2 {
     font-size: 25px;
+  }
+  .chose-settings-container .chose-difficulty-container .difficulty-bnts-container {
+    width: 100%;
   }
   .chose-settings-container .chose-difficulty-container .difficulty-btn {
     font-size: 22px;
@@ -130,6 +136,13 @@
 }
 
 @media only screen and (max-width: 540px) {
+  .chose-settings-container {
+    position: absolute;
+    top: 0;
+    -webkit-transform: translate(-50%, 0);
+            transform: translate(-50%, 0);
+    padding: 30px 20px 20px;
+  }
   .chose-settings-container .choose-avatar-warning,
   .chose-settings-container .chose-difficulty-warning {
     font-size: 14px;
@@ -154,7 +167,7 @@
             column-gap: 20px;
   }
   .chose-settings-container .choose-avatar-container .avatar-cards-container .avatar-card {
-    padding-top: 15px;
+    padding-top: 10px;
     width: calc((100vw - 120px) / 3);
   }
   .chose-settings-container .choose-avatar-container .avatar-cards-container .avatar-card.selected {
@@ -227,7 +240,7 @@
             column-gap: 15px;
   }
   .chose-settings-container .choose-avatar-container .avatar-cards-container .avatar-card {
-    padding-top: 10px;
+    padding-top: 5px;
     width: calc((100vw - 100px) / 3);
   }
   .chose-settings-container .choose-avatar-container .avatar-cards-container .avatar-card.selected {
@@ -289,7 +302,7 @@
 
 @media only screen and (max-width: 402px) {
   .chose-settings-container {
-    padding: 10px;
+    padding: 25px 15px 20px;
   }
   .chose-settings-container .chose-difficulty-container .difficulty-bnts-container {
     -webkit-column-gap: 5px;
@@ -305,7 +318,7 @@
     row-gap: 10px;
   }
   .chose-settings-container .choose-avatar-container .avatar-cards-container .avatar-card {
-    padding-top: 5px;
+    padding: 0;
     width: calc((100vw - 80px) / 3);
   }
   .chose-settings-container .choose-avatar-container .avatar-cards-container .avatar-card.selected {
@@ -387,7 +400,7 @@
   }
 }
 
-@media only screen and (max-height: 700px) {
+@media only screen and (max-height: 700px) and (min-width: 540px) {
   .chose-settings-container {
     row-gap: 5px;
   }
@@ -416,7 +429,7 @@
   }
 }
 
-@media only screen and (max-height: 530px) {
+@media only screen and (max-height: 530px) and (min-width: 540px) {
   .chose-settings-container .choose-avatar-warning,
   .chose-settings-container .chose-difficulty-warning {
     font-size: 14px;
@@ -454,7 +467,7 @@
   }
 }
 
-@media only screen and (max-height: 480px) {
+@media only screen and (max-height: 480px) and (min-width: 540px) {
   .chose-settings-container .choose-avatar-warning,
   .chose-settings-container .chose-difficulty-warning {
     font-size: 13px;
@@ -499,7 +512,7 @@
   }
 }
 
-@media only screen and (max-height: 420px) {
+@media only screen and (max-height: 420px) and (min-width: 540px) {
   .chose-settings-container {
     padding: 10px 20px 20px;
   }
@@ -532,7 +545,7 @@
   }
 }
 
-@media only screen and (max-height: 385px) {
+@media only screen and (max-height: 385px) and (min-width: 540px) {
   .chose-settings-container .chose-difficulty-container h2 {
     padding-bottom: 0.3em;
   }

@@ -167,6 +167,7 @@ body {
           align-items: center;
   -webkit-column-gap: 20px;
           column-gap: 20px;
+  row-gap: 10px;
 }
 
 .chose-settings-container .chose-difficulty-container .difficulty-btn {
